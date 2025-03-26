@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const PORT = process.env.PORT;
+const userRoutes = require('./routes/user.js');
 const app = express();
 
 //setup out view engine
@@ -9,7 +10,7 @@ app.set('views', "./views");
 
 
 app.use(express.static('public'));
-
+app.use(userRoutes);
 
 
 
